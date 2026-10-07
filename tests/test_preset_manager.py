@@ -217,7 +217,7 @@ def test_position_estimate_tracks_xyz_command_deltas(qt_app, tmp_path, monkeypat
         "y": 0x8000 - presets.POSITION_STEP,
         "z": presets.POSITION_STEP,
     }
-    assert "X " in presets.position_label.text()
+    assert not hasattr(presets, "position_label")
     presets._persist_timer.stop()
 
 

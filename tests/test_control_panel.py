@@ -90,6 +90,7 @@ def test_spanish_setting_tiles_localize_defaults_but_keep_custom_names(qt_app):
     )
     panel = ControlPanel(FakeCameraManager(), settings)
 
+    assert panel.settings_group.title() == "Configuración de cámara"
     assert panel._summary_buttons["exposure"].text() == "Exposición: 0.0"
     assert panel._summary_buttons["white_balance"].text() == "WB: auto"
     assert panel._summary_buttons["brightness"].text() == "Luz de sala: 50"
@@ -104,6 +105,7 @@ def test_spanish_setting_tiles_localize_defaults_but_keep_custom_names(qt_app):
     panel.retranslate()
     apply_language(panel, "en")
 
+    assert panel.settings_group.title() == "Camera Settings"
     assert panel._summary_buttons["exposure"].text() == "Exposure: 0.0"
     assert panel._summary_buttons["brightness"].text() == "Luz de sala: 50"
     assert panel.pan_home_btn.text() == "HOME"

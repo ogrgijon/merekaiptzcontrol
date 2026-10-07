@@ -97,11 +97,6 @@ class PresetManager(QWidget):
         )
         self.save_mode_btn.toggled.connect(self._on_save_mode_toggled)
         layout.addWidget(self.save_mode_btn)
-        self.position_label = QLabel("X 32768   Y 32768   Z 0")
-        self.position_label.setToolTip(
-            "Camera position: pan (X), tilt (Y), zoom (Z); estimated when unreadable"
-        )
-        layout.addWidget(self.position_label)
 
         slot_grid = QGridLayout()
         for slot in range(self.MAX_PRESETS):
@@ -364,7 +359,6 @@ class PresetManager(QWidget):
                 value = actual.get(axis)
                 if value is not None:
                     position[coordinate] = self._clamp_position(int(value))
-        self._update_position_label(position)
         return dict(position)
 
     @staticmethod
@@ -374,11 +368,6 @@ class PresetManager(QWidget):
     @staticmethod
     def _clamp_position(value: int) -> int:
         return max(0, min(0xFFFF, value))
-
-    def _update_position_label(self, position: dict[str, int]) -> None:
-        self.position_label.setText(
-            f"X {position['x']}   Y {position['y']}   Z {position['z']}"
-        )
 
     def _recall_state(self, camera, camera_key: str, state: dict) -> None:
         self._cancel_relative_moves(camera)
@@ -438,7 +427,6 @@ class PresetManager(QWidget):
                 self._show_movement_failure()
             else:
                 self.positions[camera_key] = target_position
-                self._update_position_label(target_position)
                 self._save_presets()
         else:
             if not self._movement_failed:
@@ -463,7 +451,6 @@ class PresetManager(QWidget):
                 self._show_movement_failure()
             elif self._pending_position is not None and self._pending_camera_key:
                 self.positions[self._pending_camera_key] = self._pending_position
-                self._update_position_label(self._pending_position)
                 self._pending_position = None
                 self._pending_camera_key = None
                 self._save_presets()

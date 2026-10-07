@@ -161,6 +161,7 @@ class ControlPanel(QWidget):
 
     def retranslate(self) -> None:
         """Refresh dynamic setting names after a language change."""
+        self.settings_group.setTitle(self._tr("Camera Settings"))
         for key in self._summary_buttons:
             self._refresh_summary(key)
         selected = getattr(self, "_selected_setting", None)
@@ -1285,8 +1286,8 @@ class ControlPanel(_LegacyControlPanel):
         settings_layout.setContentsMargins(0, 0, 0, 0)
         settings_layout.setSpacing(4)
 
-        state_group = QGroupBox("Camera Settings")
-        state_layout = QGridLayout(state_group)
+        self.settings_group = QGroupBox("Camera Settings")
+        state_layout = QGridLayout(self.settings_group)
         state_layout.setContentsMargins(5, 12, 5, 5)
         state_layout.setHorizontalSpacing(4)
         state_layout.setVerticalSpacing(4)
@@ -1373,7 +1374,7 @@ class ControlPanel(_LegacyControlPanel):
                 state_layout.addWidget(tile, index // 2 + 1, 1)
             else:
                 state_layout.addWidget(tile, index // 2 + 1, index % 2)
-        settings_layout.addWidget(state_group)
+        settings_layout.addWidget(self.settings_group)
         settings_layout.addStretch()
 
         self.editor_group = QGroupBox("Adjust Pan / Tilt")

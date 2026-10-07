@@ -99,7 +99,6 @@ _SPANISH = {
     "Save Preset": "Guardar preajuste",
     "Click a slot to save...": "Pulsa una posición para guardar...",
     "Activate, then click a slot to save the current camera state there": "Actívalo y pulsa una posición para guardar el estado actual de la cámara",
-    "Camera position: pan (X), tilt (Y), zoom (Z); estimated when unreadable": "Posición de cámara: paneo (X), inclinación (Y), zoom (Z); estimada si no se puede leer",
     "No Camera Connected": "Ninguna cámara conectada",
     "Connect a camera first.": "Conecta una cámara primero.",
     "Preset Failed": "Error en el preajuste",

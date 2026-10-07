@@ -43,8 +43,12 @@ Discovery and individual controls vary by camera. See [Linux and UVC support det
 ### User manual
 
 <p align="center">
-  <img src="screenshot.png" alt="MerekaiPTZControl camera control window" width="270">
+  <a href="screenshot.png">
+    <img src="screenshot.png" alt="MerekaiPTZControl camera control window in English" width="270">
+  </a>
 </p>
+
+<p align="center"><em>English interface · Select the image to view it at full size</em></p>
 
 The screenshot shows the control window while disconnected. Connect a camera before using its controls; available actions depend on the camera's supported interface and capabilities.
 
@@ -161,7 +165,15 @@ La detección y los controles disponibles varían según la cámara. Consulta lo
 
 ### Manual de usuario
 
-La [captura de la ventana](screenshot.png) muestra la aplicación desconectada. Conecta una cámara antes de utilizar sus controles; las acciones disponibles dependen de la interfaz y las capacidades que admita la cámara.
+<p align="center">
+  <a href="screenshot_es.png">
+    <img src="screenshot_es.png" alt="Ventana de control de MerekaiPTZControl en español" width="270">
+  </a>
+</p>
+
+<p align="center"><em>Interfaz en español · Selecciona la imagen para verla a tamaño completo</em></p>
+
+La captura muestra la aplicación desconectada. Conecta una cámara antes de utilizar sus controles; las acciones disponibles dependen de la interfaz y las capacidades que admita la cámara.
 
 #### Conectar y seleccionar una cámara
 
